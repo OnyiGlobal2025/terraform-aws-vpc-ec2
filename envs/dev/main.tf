@@ -12,3 +12,14 @@ module "vpc" {
 
 }
 
+
+module "ec2" {
+  source = "../../ec2"
+
+  ami_id             = var.ami_id
+  instance_type      = var.instance_type
+  key_name           = var.key_name
+
+  subnet_id          = module.vpc.public_subnet_id
+  security_group_id  = module.vpc.public_ec2_sg_id
+}
