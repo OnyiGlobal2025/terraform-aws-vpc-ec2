@@ -29,3 +29,10 @@ variable "enable_internet_gateway" {
   default     = true
 }
 
+variable "enable_nat_gateway" {
+  description = "Whether to create a NAT Gateway"
+  type        = bool
+  default     = true
+}
+
+
