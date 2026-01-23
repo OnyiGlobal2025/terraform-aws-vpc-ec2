@@ -18,3 +18,6 @@ availability_zones = [
   "us-east-1b"
 ]
 
+allowed_ssh_cidr = "197.210.55.27/32"
+
+

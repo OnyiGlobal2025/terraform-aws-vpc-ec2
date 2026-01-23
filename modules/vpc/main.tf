@@ -104,6 +104,65 @@ resource "aws_route" "private_nat" {
   nat_gateway_id         = aws_nat_gateway.this[0].id
 }
 
+resource "aws_security_group" "public_ec2" {
+  name        = "public-ec2-sg"
+  description = "Allow SSH and HTTP"
+  vpc_id      = aws_vpc.this.id
+
+  ingress {
+    description = "SSH access"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [var.allowed_ssh_cidr]
+  }
+
+  ingress {
+    description = "HTTP access"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "public-ec2-sg"
+  }
+}
+
+resource "aws_security_group" "private_ec2" {
+  name        = "private-ec2-sg"
+  description = "Allow SSH from public EC2 only"
+  vpc_id      = aws_vpc.this.id
+
+  ingress {
+    description     = "SSH from public EC2"
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    security_groups = [aws_security_group.public_ec2.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "private-ec2-sg"
+  }
+}
+
+
 
 
 

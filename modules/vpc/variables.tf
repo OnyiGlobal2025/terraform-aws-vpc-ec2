@@ -35,4 +35,10 @@ variable "enable_nat_gateway" {
   default     = true
 }
 
+variable "allowed_ssh_cidr" {
+  description = "CIDR block allowed to SSH into public EC2"
+  type        = string
+}
+
+
 

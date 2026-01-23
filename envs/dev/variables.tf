@@ -24,3 +24,10 @@ variable "private_subnet_cidrs" {
 variable "availability_zones" {
   type = list(string)
 }
+
+variable "allowed_ssh_cidr" {
+  description = "CIDR block allowed to SSH into public EC2"
+  type        = string
+}
+
+
