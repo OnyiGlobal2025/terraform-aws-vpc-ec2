@@ -52,7 +52,8 @@ terraform-aws-vpc-ec2/
 ├── .gitignore
 └── README.md
 
-⚙️ Key Terraform Concepts Demonstrated
+
+# Key Terraform Concepts Demonstrated
 
 Modular Terraform design (modules/vpc, ec2)
 
@@ -70,44 +71,44 @@ Clean resource teardown using terraform destroy
 
 Safe handling of Terraform state (not committed to Git)
 
-🚀 Deployment Workflow
+# Deployment Workflow
 
 The project followed this intentional workflow:
 
-Initialize Terraform
+# Initialize Terraform
 
 terraform init
 
 
-Validate configuration
+# Validate configuration
 
 terraform validate
 
 
-Review execution plan
+# Review execution plan
 
 terraform plan
 
 
-Apply infrastructure
+# Apply infrastructure
 
 terraform apply
 
 
-Verify deployment
+# Verify deployment
 
 Confirmed resources in AWS Console
 
 Successfully SSH’d into the EC2 instance
 
-Destroy infrastructure
+# Destroy infrastructure
 
 terraform destroy
 
 
 This ensured cost safety and demonstrated full lifecycle control.
 
-🔐 Security Considerations
+# Security Considerations
 
 SSH access restricted to the developer’s public IP (/32)
 
