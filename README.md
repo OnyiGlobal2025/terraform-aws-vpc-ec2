@@ -165,5 +165,7 @@ These will be implemented as separate portfolio projects.
 # Author
 
 [Onyedika Okoro]
+
 Cloud / DevOps Engineer
+
 Terraform • AWS • Infrastructure as Code
