@@ -28,19 +28,18 @@ Secure SSH access restricted to the developer’s public IP
 The infrastructure follows a real-world public/private network design commonly used in production environments.
 
 # Project Structure
+
+```
 terraform-aws-vpc-ec2/
-│
 ├── modules/
 │   └── vpc/
 │       ├── main.tf
 │       ├── variables.tf
 │       └── outputs.tf
-│
 ├── ec2/
 │   ├── main.tf
 │   ├── variables.tf
 │   └── outputs.tf
-│
 ├── envs/
 │   └── dev/
 │       ├── main.tf
@@ -48,9 +47,9 @@ terraform-aws-vpc-ec2/
 │       ├── terraform.tfvars
 │       ├── providers.tf
 │       └── outputs.tf
-│
 ├── .gitignore
 └── README.md
+```
 
 
 # Key Terraform Concepts Demonstrated
