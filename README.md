@@ -164,7 +164,7 @@ These will be implemented as separate portfolio projects.
 
 # Author
 
-[Onyedika Okoro]
+Onyedika Okoro
 
 Cloud / DevOps Engineer
 
