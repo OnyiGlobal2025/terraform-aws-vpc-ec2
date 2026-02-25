@@ -9,23 +9,24 @@ All resources were successfully created, verified (including SSH access), and cl
 
 The project provisions the following AWS resources:
 
-Custom VPC
+- Custom VPC
 
-Public and private subnets across multiple Availability Zones
+- Public and private subnets across multiple Availability Zones
 
-Internet Gateway (IGW) for public access
+- Internet Gateway (IGW) for public access
 
-NAT Gateway for private subnet outbound access
+- NAT Gateway for private subnet outbound access
 
-Route tables and associations
+- Route tables and associations
 
-Security Groups with least-privilege access
+- Security Groups with least-privilege access
 
-Public EC2 instance (Amazon Linux 2)
+- Public EC2 instance (Amazon Linux 2)
 
-Secure SSH access restricted to the developer’s public IP
+- Secure SSH access restricted to the developer’s public IP
 
 The infrastructure follows a real-world public/private network design commonly used in production environments.
+
 
 # Project Structure
 
@@ -54,21 +55,22 @@ terraform-aws-vpc-ec2/
 
 # Key Terraform Concepts Demonstrated
 
-Modular Terraform design (modules/vpc, ec2)
+1. Modular Terraform design (modules/vpc, ec2)
 
-Variable scoping across root and child modules
+2. Variable scoping across root and child modules
 
-Secure networking with public/private subnet separation
+3. Secure networking with public/private subnet separation
 
-Controlled SSH access using CIDR restrictions
+4. Controlled SSH access using CIDR restrictions
 
-Dependency management between VPC and EC2
+5. Dependency management between VPC and EC2
 
-Terraform validation and planning before apply
+6. Terraform validation and planning before apply
 
-Clean resource teardown using terraform destroy
+7. Clean resource teardown using terraform destroy
 
-Safe handling of Terraform state (not committed to Git)
+8. Safe handling of Terraform state (not committed to Git)
+
 
 # Deployment Workflow
 
@@ -76,91 +78,98 @@ The project followed this intentional workflow:
 
 # Initialize Terraform
 
-terraform init
+- terraform init
 
 
 # Validate configuration
 
-terraform validate
+- terraform validate
 
 
 # Review execution plan
 
-terraform plan
+- terraform plan
 
 
 # Apply infrastructure
 
-terraform apply
+- terraform apply
 
 
 # Verify deployment
 
-Confirmed resources in AWS Console
+- Confirmed resources in AWS Console
 
-Successfully SSH’d into the EC2 instance
+- Successfully SSH’d into the EC2 instance
 
 # Destroy infrastructure
 
-terraform destroy
+- terraform destroy
 
 
 This ensured cost safety and demonstrated full lifecycle control.
 
+
 # Security Considerations
 
-SSH access restricted to the developer’s public IP (/32)
+- SSH access restricted to the developer’s public IP (/32)
 
-Private subnets have no direct internet access
+- Private subnets have no direct internet access
 
-Outbound internet access for private subnets routed via NAT Gateway
+- Outbound internet access for private subnets routed via NAT Gateway
 
-Security Groups used instead of overly permissive network ACLs
+- Security Groups used instead of overly permissive network ACLs
+
 
 # Design Decisions & Rationale
-Why no remote backend (S3 / Terraform Cloud)?
+
+- Why no remote backend (S3 / Terraform Cloud)?
 
 This project was intentionally scoped as a single-engineer, ephemeral environment focused on Terraform fundamentals.
 
 For production or team environments, a remote backend (S3 + DynamoDB or Terraform Cloud) would be used.
 Those workflows are planned as separate, dedicated Terraform projects to keep learning objectives clear and focused.
 
-Why no CI/CD in this project?
+- Why no CI/CD in this project?
 
 CI/CD pipelines for Terraform are best demonstrated in projects focused on automation, policy enforcement, and team workflows.
 This project focuses on infrastructure design and correctness, not pipeline execution.
 
+
 # Documentation & Evidence
 
-The following were captured during the project (recommended for review):
+- The following were captured during the project (recommended for review):
 
-terraform validate success output
+- terraform validate success output
 
-terraform plan showing resources to be created
+- terraform plan showing resources to be created
 
-Successful terraform apply
+- Successful terraform apply
 
-EC2 public IP output
+- EC2 public IP output
 
-SSH session into the EC2 instance
+- SSH session into the EC2 instance
 
-Successful terraform destroy
+- Successful terraform destroy
+
 
 # Cleanup
 
-All AWS resources created by this project were successfully destroyed after verification to prevent ongoing charges.
+- All AWS resources created by this project were successfully destroyed after verification to prevent ongoing charges.
+
 
 # Future Enhancements
 
-Planned follow-up projects include:
+1. Planned follow-up projects include:
 
-Terraform remote backend with S3 & DynamoDB
+2. Terraform remote backend with S3 & DynamoDB
 
-Terraform CI/CD with GitHub Actions
+3. Terraform CI/CD with GitHub Actions
 
-Terraform Cloud workspace-driven workflows
+4. Terraform Cloud workspace-driven workflows
 
 These will be implemented as separate portfolio projects.
+
 
 # Author
 
