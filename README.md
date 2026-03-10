@@ -1,3 +1,13 @@
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Cloud_Engineering-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Amazon VPC](https://img.shields.io/badge/Amazon_VPC-Networking-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Amazon EC2](https://img.shields.io/badge/Amazon_EC2-Compute-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white)
+![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white)
+![Security](https://img.shields.io/badge/Security-Least_Privilege-success?style=for-the-badge)
+![Production Style](https://img.shields.io/badge/Production--Style-Modular_Design-blue?style=for-the-badge)
+![Lifecycle Managed](https://img.shields.io/badge/Lifecycle-Full_Control-brightgreen?style=for-the-badge)
+
+
 # Project Overview
 
 This project demonstrates the design, provisioning, validation, and lifecycle management of a complete AWS network and compute environment using Terraform (Infrastructure as Code).
